@@ -19,7 +19,7 @@ public class Peon extends Pieza{
     }
 
     @Override
-    public char Figura(boolean colorPieza) {
+    public char Figura() {
         if (colorPieza == true) {      
             return 'P';
         } else {

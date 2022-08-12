@@ -12,7 +12,9 @@ public class Lab4P2_AlbertthGodoy_Emiliano_Agurcia {
      */
     
     public static void main(String[] args) {
-        
+        Tablero t = new Tablero();
+        t.iniciarTablero();
+        t.ImprimirTablero();
     }
     
 }

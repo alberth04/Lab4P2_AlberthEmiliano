@@ -26,7 +26,7 @@ public class Caballo extends Pieza{
     }
 
     @Override
-    public char Figura(boolean colorPieza) {
+    public char Figura() {
         if (colorPieza == true) {      
             return 'N';
         } else {

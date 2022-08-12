@@ -28,8 +28,8 @@ public class Rey extends Pieza{
     }
 
     @Override
-    public char Figura(boolean colorPieza) {
-        if (colorPieza == true) {      
+    public char Figura() {
+        if ( colorPieza == true) {      
             return 'K';
         } else {
             return 'k';

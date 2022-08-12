@@ -8,7 +8,7 @@ public abstract class Pieza {
 
     private char cordX;
     private char cordY;
-    private boolean colorPieza;
+    protected boolean colorPieza;
     //Constructores
     public Pieza() {
     }
@@ -23,6 +23,7 @@ public abstract class Pieza {
         this.colorPieza = colorPieza;
     }
 
+    
     
 
     public char getCordX() {
@@ -40,6 +41,10 @@ public abstract class Pieza {
     public void setCordY(char cordY) {
         this.cordY = cordY;
     }
+    
+    public boolean colorPieza(){
+        return colorPieza;
+    }
 
     @Override
     public String toString() {
@@ -48,6 +53,6 @@ public abstract class Pieza {
 
     public abstract boolean validarMovimiento();
     
-    public abstract char Figura(boolean colorPieza);
+    public abstract char Figura();
 
 }

@@ -9,7 +9,7 @@ import java.util.Random;
 public class Tablero {
 
     //Atributos
-    private final Object[][] tablero = new Tablero[8][8];
+    private final Pieza[][] tablero = new Pieza[8][8];
     private boolean turnoChess;
 
     //Constructor
@@ -21,7 +21,7 @@ public class Tablero {
      */
     public void iniciarTablero() {
         for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[0].length; j++) {
+            for (int j = 0; j < tablero[i].length; j++) {
                 //Rellenar el tablero
                 //Colocar negras
                 if (i == 0) {
@@ -98,46 +98,19 @@ public class Tablero {
         Random rnd = new Random();
         turnoChess = rnd.nextBoolean();
     }
-    
-    public void ImprimirTablero(char[][] Matriz){
-            
-        String ABC = "abcdefghi";
-        String NUM = "0123456789";
-        int sub1 = 0;//Controla subindice de nodo1
-        int sub2 = 0;//Controla subindice de nodo2
-        
-        for (int i = 0; i < Matriz.length; i++) {
-            for (int j = 0; j < Matriz[i].length; j++) {
-                
-                char letras = ABC.charAt(sub1);
-                char nums = NUM.charAt(sub2);
-                
-                if (i == 0 && j != 0) {                     //Letras
-                    System.out.print("   " + letras);
-                    sub1++;
-                }else if (i != 0 && j == 0) {                     //Numeros
-                    System.out.print(" " + nums);
-                    sub2++;
+
+    public void ImprimirTablero() {
+        System.out.println("  a  b  c  d  e  f  g  h  ");
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print(8 - i);
+            for (int j = 0; j < tablero[i].length; j++) {
+                if (tablero[i][j] != null) {
+                    System.out.printf("[%c]", tablero[i][j].Figura());
+                } else {
+                    System.out.print("[ ]");
                 }
-                
-                if (i == 0 && j == 0) {                            //Primer Espacio
-                    System.out.print(" ");
-                } 
-//                else if (i == 0 && j != 0) {                     //Letras
-//                    System.out.print("   " + letras);
-//                    sub1++;
-//                } 
-//                else if (i != 0 && j == 0) {                     //Numeros
-//                    System.out.print(" " + nums);
-//                    sub2++;
-//                }
-                
-                if(i != 0 && j != 0){                                            
-                    System.out.print("| " + Matriz[i][j] + " ");
-                } 
-            }    
-            System.out.println("");
-            System.out.println("  + - + - + - + - + - + - + - +");
+            }
+            System.out.println();
         }
     }
-}
+}//fin class

@@ -26,7 +26,7 @@ public class Torre extends Pieza{
     }
 
     @Override
-    public char Figura(boolean colorPieza) {
+    public char Figura() {
         if (colorPieza == true) {      
             return 'R';
         } else {
