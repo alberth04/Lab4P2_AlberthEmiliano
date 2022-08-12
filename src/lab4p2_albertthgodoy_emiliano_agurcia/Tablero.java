@@ -164,14 +164,53 @@ public class Tablero {
 
                     break;
             }//FIN SWITCH
-            
+            movActualY = 8 - Character.getNumericValue(moverA[1].charAt(1));
+            switch (moverA[2].charAt(0)) {
+                case 'a','A':
+                    movPiezaX = 0;
+                    break;
+                case 'b','B':
+                    movPiezaX = 1;
+                    break;
+                case 'c','C':
+                    movPiezaX = 2;
+                    break;
+                case 'd','D':
+                    movPiezaX = 3;
+                    break;
+                case 'e','E':
+                    movPiezaX = 4;
+                    break;
+                case 'f','F':
+                    movPiezaX = 5;
+                    break;
+                case 'g','G':
+                    movPiezaX = 6;
+                    break;
+                case 'h','H':
+                    movPiezaX = 7;
+
+                    break;
+                default:
+
+                    break;
+            }
+            movPiezaY = 8 - Character.getNumericValue(moverA[2].charAt(1));
+            System.out.println(movActualX);
+            System.out.println(movActualY);
+            System.out.println(movPiezaX);
+            System.out.println(movPiezaY);
+
         }
+
     }
 
     public boolean movimientoValido() {
         //Validaciones si esta fuera de tablero
-        if () {
-
+        if ((movActualY < 0 || movActualY > 7 || movActualX < 0 || movActualX > 7 || movPiezaY < 0
+                || movPiezaY > 7 || movPiezaX < 0 || movPiezaX > 7)) {
+            System.out.println("Movimiento fuera del tablero: ");
+            return false;
         }
     }
 }//fin class

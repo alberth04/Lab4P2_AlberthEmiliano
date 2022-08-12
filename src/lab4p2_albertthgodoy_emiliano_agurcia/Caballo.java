@@ -22,10 +22,7 @@ public class Caballo extends Pieza {
         super(cordX, cordY, colorPieza);
     }
 
-    @Override
-    public boolean validarMovimiento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public char Figura() {
@@ -34,6 +31,11 @@ public class Caballo extends Pieza {
         } else {
             return 'n';
         }
+    }
+
+    @Override
+    public boolean validarMovimiento(int movActualX, int movActualY, int movPiezaX, int movPiezaY) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

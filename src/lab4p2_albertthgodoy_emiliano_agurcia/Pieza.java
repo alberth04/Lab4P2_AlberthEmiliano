@@ -9,6 +9,7 @@ public abstract class Pieza {
     private int cordX;
     private int cordY;
     protected boolean colorPieza;
+    private Tablero tablero;
 
     //Constructores
     public Pieza() {
@@ -49,7 +50,7 @@ public abstract class Pieza {
         return "Pieza{" + "cordX=" + cordX + ", cordY=" + cordY + '}';
     }
 
-    public abstract boolean validarMovimiento();
+    public abstract boolean validarMovimiento(int movActualX, int movActualY, int movPiezaX, int movPiezaY);
 
     public abstract char Figura();
 

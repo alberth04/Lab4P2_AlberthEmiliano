@@ -23,10 +23,7 @@ public class Alfil extends Pieza{
     }
     
     
-    @Override
-    public boolean validarMovimiento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public char Figura() {
@@ -35,6 +32,11 @@ public class Alfil extends Pieza{
         } else {
             return 'b';
         }
+    }
+
+    @Override
+    public boolean validarMovimiento(int movActualX, int movActualY, int movPiezaX, int movPiezaY) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
