@@ -1,6 +1,7 @@
 package lab4p2_albertthgodoy_emiliano_agurcia;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -111,6 +112,27 @@ public class Tablero {
                 }
             }
             System.out.println();
+        }
+
+    }
+
+    public void moverPieza() {
+        Scanner sc = new Scanner(System.in);
+        String mover = "";
+        if (turnoChess == true) {
+            //Turno de las blancas
+            System.out.println("===============BLANCAS=================");
+            System.out.println("Movimiento: (ejemplo P|a6-a5) ");
+            mover = sc.next();
+            //Validacion
+            while (!mover.matches("[a-zA-Z]\\|[a-zA-Z][1-8]-[a-zA-Z][1-8]")) {
+                System.out.println("No existe ese movimiento Movimiento: (ejemplo P|a6-a5) ");
+                mover = sc.next();
+            }
+            String[] moverA = mover.split("\\||-");
+            for (int i = 0; i < moverA.length; i++) {
+                System.out.println(moverA[i]);
+            }
         }
     }
 }//fin class
