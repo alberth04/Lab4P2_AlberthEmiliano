@@ -15,7 +15,7 @@ public class Peon extends Pieza{
 
     @Override
     public boolean validarMovimiento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     @Override
