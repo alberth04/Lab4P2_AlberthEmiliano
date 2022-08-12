@@ -14,9 +14,11 @@ public class Torre extends Pieza{
     public Torre() {
     }
 
-    public Torre(char cordX, char cordY) {
-        super(cordX, cordY);
+    public Torre(boolean colorPieza) {
+        super(colorPieza);
     }
+
+    
 
     @Override
     public boolean validarMovimiento() {
