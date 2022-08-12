@@ -6,14 +6,15 @@ package lab4p2_albertthgodoy_emiliano_agurcia;
  */
 public abstract class Pieza {
 
-    private char cordX;
-    private char cordY;
+    private int cordX;
+    private int cordY;
     protected boolean colorPieza;
+
     //Constructores
     public Pieza() {
     }
 
-    public Pieza(char cordX, char cordY, boolean colorPieza) {
+    public Pieza(int cordX, int cordY, boolean colorPieza) {
         this.cordX = cordX;
         this.cordY = cordY;
         this.colorPieza = colorPieza;
@@ -23,26 +24,23 @@ public abstract class Pieza {
         this.colorPieza = colorPieza;
     }
 
-    
-    
-
-    public char getCordX() {
+    public int getCordX() {
         return cordX;
     }
 
-    public void setCordX(char cordX) {
+    public void setCordX(int cordX) {
         this.cordX = cordX;
     }
 
-    public char getCordY() {
+    public int getCordY() {
         return cordY;
     }
 
-    public void setCordY(char cordY) {
+    public void setCordY(int cordY) {
         this.cordY = cordY;
     }
-    
-    public boolean colorPieza(){
+
+    public boolean colorPieza() {
         return colorPieza;
     }
 
@@ -52,7 +50,7 @@ public abstract class Pieza {
     }
 
     public abstract boolean validarMovimiento();
-    
+
     public abstract char Figura();
 
 }

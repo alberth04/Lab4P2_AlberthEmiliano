@@ -9,7 +9,7 @@ package lab4p2_albertthgodoy_emiliano_agurcia;
  *
  * @author emili
  */
-public class Caballo extends Pieza{
+public class Caballo extends Pieza {
 
     public Caballo() {
     }
@@ -18,7 +18,9 @@ public class Caballo extends Pieza{
         super(colorPieza);
     }
 
-    
+    public Caballo(int cordX, int cordY, boolean colorPieza) {
+        super(cordX, cordY, colorPieza);
+    }
 
     @Override
     public boolean validarMovimiento() {
@@ -27,11 +29,11 @@ public class Caballo extends Pieza{
 
     @Override
     public char Figura() {
-        if (colorPieza == true) {      
+        if (colorPieza == true) {
             return 'N';
         } else {
             return 'n';
         }
     }
-    
+
 }

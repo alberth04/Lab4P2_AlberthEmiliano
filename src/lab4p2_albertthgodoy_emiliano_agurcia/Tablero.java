@@ -12,6 +12,7 @@ public class Tablero {
     //Atributos
     private final Pieza[][] tablero = new Pieza[8][8];
     private boolean turnoChess;
+    private int movPiezaX, movPiezaY, movActualX, movActualY;
 
     //Constructor
     public Tablero() {
@@ -28,62 +29,63 @@ public class Tablero {
                 if (i == 0) {
                     switch (j) {
                         case 0:
-                            tablero[i][j] = new Torre(false);
+                            tablero[i][j] = new Torre(j, i, turnoChess);
+
                             break;
                         case 1:
-                            tablero[i][j] = new Caballo(false);
+                            tablero[i][j] = new Caballo(j, i, false);
                             break;
                         case 2:
-                            tablero[i][j] = new Alfil(false);
+                            tablero[i][j] = new Alfil(j, i, false);
                             break;
                         case 3:
-                            tablero[i][j] = new Dama(false);
+                            tablero[i][j] = new Dama(j, i, false);
                             break;
                         case 4:
-                            tablero[i][j] = new Rey(false);
+                            tablero[i][j] = new Rey(j, i, false);
                             break;
                         case 5:
-                            tablero[i][j] = new Alfil(false);
+                            tablero[i][j] = new Alfil(j, i, false);
                             break;
                         case 6:
-                            tablero[i][j] = new Caballo(false);
+                            tablero[i][j] = new Caballo(j, i, false);
                             break;
                         case 7:
-                            tablero[i][j] = new Torre(false);
+                            tablero[i][j] = new Torre(j, i, false);
                             break;
                         default:
 
                     }//fin switch
                 } else if (i == 1 && j < 8) {
-                    tablero[i][j] = new Peon(false);
+                    tablero[i][j] = new Peon(j, i, false);
                     //Crear fichas blancas
                 } else if (i == 6 && j < 8) {
-                    tablero[i][j] = new Peon(true);
+                    tablero[i][j] = new Peon(j, i, true);
                 } else if (i == 7) {
                     switch (j) {
                         case 0:
-                            tablero[i][j] = new Torre(true);
+                            tablero[i][j] = new Torre(j, i, true);
                             break;
                         case 1:
-                            tablero[i][j] = new Caballo(true);
+                            tablero[i][j] = new Caballo(j, i, true);
                             break;
                         case 2:
-                            tablero[i][j] = new Alfil(true);
+                            tablero[i][j] = new Alfil(j, i, true);
                             break;
                         case 3:
-                            tablero[i][j] = new Dama(true);
+                            tablero[i][j] = new Dama(j, i, true);
                             break;
                         case 4:
-                            tablero[i][j] = new Rey(true);
+                            tablero[i][j] = new Rey(j, i, true);
                             break;
                         case 5:
-                            tablero[i][j] = new Alfil(true);
+                            tablero[i][j] = new Alfil(j, i, true);
                             break;
                         case 6:
-                            tablero[i][j] = new Caballo(true);
+                            tablero[i][j] = new Caballo(j, i, true);
                             break;
                         case 7:
-                            tablero[i][j] = new Torre(true);
+                            tablero[i][j] = new Torre(j, i, true);
                             break;
                         default:
 
@@ -126,13 +128,50 @@ public class Tablero {
             mover = sc.next();
             //Validacion
             while (!mover.matches("[a-zA-Z]\\|[a-zA-Z][1-8]-[a-zA-Z][1-8]")) {
-                System.out.println("No existe ese movimiento Movimiento: (ejemplo P|a6-a5) ");
+                System.out.println("No existe ese movimiento \nMovimiento: (ejemplo P|a6-a5) ");
                 mover = sc.next();
             }
+
             String[] moverA = mover.split("\\||-");
-            for (int i = 0; i < moverA.length; i++) {
-                System.out.println(moverA[i]);
-            }
+
+            switch (moverA[1].charAt(0)) {
+                case 'a','A':
+                    movActualX = 0;
+                    break;
+                case 'b','B':
+                    movActualX = 1;
+                    break;
+                case 'c','C':
+                    movActualX = 2;
+                    break;
+                case 'd','D':
+                    movActualX = 3;
+                    break;
+                case 'e','E':
+                    movActualX = 4;
+                    break;
+                case 'f','F':
+                    movActualX = 5;
+                    break;
+                case 'g','G':
+                    movActualX = 6;
+                    break;
+                case 'h','H':
+                    movActualX = 7;
+
+                    break;
+                default:
+
+                    break;
+            }//FIN SWITCH
+            
+        }
+    }
+
+    public boolean movimientoValido() {
+        //Validaciones si esta fuera de tablero
+        if () {
+
         }
     }
 }//fin class

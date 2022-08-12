@@ -4,7 +4,7 @@ package lab4p2_albertthgodoy_emiliano_agurcia;
  *
  * @author emili
  */
-public class Dama extends Pieza{
+public class Dama extends Pieza {
 
     public Dama() {
     }
@@ -13,7 +13,9 @@ public class Dama extends Pieza{
         super(colorPieza);
     }
 
-    
+    public Dama(int cordX, int cordY, boolean colorPieza) {
+        super(cordX, cordY, colorPieza);
+    }
 
     @Override
     public boolean validarMovimiento() {
@@ -22,12 +24,11 @@ public class Dama extends Pieza{
 
     @Override
     public char Figura() {
-        if (colorPieza == true) {      
+        if (colorPieza == true) {
             return 'Q';
         } else {
             return 'q';
         }
     }
 
-    
 }

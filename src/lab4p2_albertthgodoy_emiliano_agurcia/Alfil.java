@@ -17,6 +17,11 @@ public class Alfil extends Pieza{
     public Alfil(boolean colorPieza) {
         super(colorPieza);
     }
+
+    public Alfil(int cordX, int cordY, boolean colorPieza) {
+        super(cordX, cordY, colorPieza);
+    }
+    
     
     @Override
     public boolean validarMovimiento() {

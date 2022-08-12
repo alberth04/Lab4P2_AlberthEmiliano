@@ -18,6 +18,10 @@ public class Torre extends Pieza{
         super(colorPieza);
     }
 
+    public Torre(int cordX, int cordY, boolean colorPieza) {
+        super(cordX, cordY, colorPieza);
+    }
+
     
 
     @Override

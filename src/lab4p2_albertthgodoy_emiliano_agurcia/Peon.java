@@ -13,6 +13,11 @@ public class Peon extends Pieza{
         super(colorPieza);
     }
 
+    public Peon(int cordX, int cordY, boolean colorPieza) {
+        super(cordX, cordY, colorPieza);
+    }
+    
+
     @Override
     public boolean validarMovimiento() {
         return true;
