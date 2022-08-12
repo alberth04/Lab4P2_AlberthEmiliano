@@ -11,5 +11,17 @@ package lab4p2_albertthgodoy_emiliano_agurcia;
  */
 public class Dama extends Pieza{
 
+    public Dama() {
+    }
+
+    public Dama(char cordX, char cordY) {
+        super(cordX, cordY);
+    }
+
+    @Override
+    public boolean validarMovimiento() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }
