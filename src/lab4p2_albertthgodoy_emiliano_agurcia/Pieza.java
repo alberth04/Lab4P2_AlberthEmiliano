@@ -6,16 +6,24 @@ package lab4p2_albertthgodoy_emiliano_agurcia;
  */
 public abstract class Pieza {
 
-    char cordX;
-    char cordY;
-
+    private char cordX;
+    private char cordY;
+    private boolean colorPieza;
+    //Constructores
     public Pieza() {
     }
 
-    public Pieza(char cordX, char cordY) {
+    public Pieza(char cordX, char cordY, boolean colorPieza) {
         this.cordX = cordX;
         this.cordY = cordY;
+        this.colorPieza = colorPieza;
     }
+
+    public Pieza(boolean colorPieza) {
+        this.colorPieza = colorPieza;
+    }
+
+    
 
     public char getCordX() {
         return cordX;

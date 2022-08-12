@@ -14,9 +14,11 @@ public class Caballo extends Pieza{
     public Caballo() {
     }
 
-    public Caballo(char cordX, char cordY) {
-        super(cordX, cordY);
+    public Caballo(boolean colorPieza) {
+        super(colorPieza);
     }
+
+    
 
     @Override
     public boolean validarMovimiento() {

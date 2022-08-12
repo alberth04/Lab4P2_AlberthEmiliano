@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4p2_albertthgodoy_emiliano_agurcia;
 
 /**
@@ -14,9 +9,11 @@ public class Dama extends Pieza{
     public Dama() {
     }
 
-    public Dama(char cordX, char cordY) {
-        super(cordX, cordY);
+    public Dama(boolean colorPieza) {
+        super(colorPieza);
     }
+
+    
 
     @Override
     public boolean validarMovimiento() {

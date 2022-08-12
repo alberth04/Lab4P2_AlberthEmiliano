@@ -14,9 +14,13 @@ public class Rey extends Pieza{
     public Rey() {
     }
 
-    public Rey(char cordX, char cordY) {
-        super(cordX, cordY);
+    public Rey(boolean colorPieza) {
+        super(colorPieza);
     }
+
+    
+
+    
 
     @Override
     public boolean validarMovimiento() {

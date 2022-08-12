@@ -14,9 +14,11 @@ public class Alfil extends Pieza{
     public Alfil() {
     }
 
-    public Alfil(char cordX, char cordY) {
-        super(cordX, cordY);
+    public Alfil(boolean colorPieza) {
+        super(colorPieza);
     }
+
+    
 
     @Override
     public boolean validarMovimiento() {

@@ -9,9 +9,11 @@ public class Peon extends Pieza{
     public Peon() {
     }
 
-    public Peon(char cordX, char cordY) {
-        super(cordX, cordY);
+    public Peon(boolean colorPieza) {
+        super(colorPieza);
     }
+
+    
 
     @Override
     public boolean validarMovimiento() {
