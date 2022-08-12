@@ -16,6 +16,7 @@ public class Lab4P2_AlbertthGodoy_Emiliano_Agurcia {
         t.iniciarTablero();
         t.ImprimirTablero();
         t.moverPieza();
+        
     }
     
 }

@@ -9,7 +9,6 @@ public abstract class Pieza {
     private int cordX;
     private int cordY;
     protected boolean colorPieza;
-    private Tablero tablero;
 
     //Constructores
     public Pieza() {
@@ -45,6 +44,16 @@ public abstract class Pieza {
         return colorPieza;
     }
 
+    public boolean isColorPieza() {
+        return colorPieza;
+    }
+
+    public void setColorPieza(boolean colorPieza) {
+        this.colorPieza = colorPieza;
+    }
+
+    
+    
     @Override
     public String toString() {
         return "Pieza{" + "cordX=" + cordX + ", cordY=" + cordY + '}';

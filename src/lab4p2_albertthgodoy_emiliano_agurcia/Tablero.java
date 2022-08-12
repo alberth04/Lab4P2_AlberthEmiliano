@@ -13,10 +13,12 @@ public class Tablero {
     private final Pieza[][] tablero = new Pieza[8][8];
     private boolean turnoChess;
     private int movPiezaX, movPiezaY, movActualX, movActualY;
+    private char Pieza;
 
     //Constructor
     public Tablero() {
     }
+    //Getter y Setter
 
     /**
      * Metodo para iniciar el tablero con las piezas
@@ -125,82 +127,99 @@ public class Tablero {
             //Turno de las blancas
             System.out.println("===============BLANCAS=================");
             System.out.println("Movimiento: (ejemplo P|a6-a5) ");
+        } else {
+            System.out.println("===============NEGRAS=================");
+            System.out.println("Movimiento: (ejemplo P|a6-a5) ");
+        }
+        mover = sc.next();
+        //Validacion
+        while (!mover.matches("[a-zA-Z]\\|[a-zA-Z][1-8]-[a-zA-Z][1-8]")) {
+            System.out.println("No existe ese movimiento \nMovimiento: (ejemplo P|a6-a5) ");
             mover = sc.next();
-            //Validacion
-            while (!mover.matches("[a-zA-Z]\\|[a-zA-Z][1-8]-[a-zA-Z][1-8]")) {
-                System.out.println("No existe ese movimiento \nMovimiento: (ejemplo P|a6-a5) ");
-                mover = sc.next();
+        }
+
+        String[] moverA = mover.split("\\||-");
+
+        switch (moverA[1].charAt(0)) {
+            case 'a','A':
+                movActualX = 0;
+                break;
+            case 'b','B':
+                movActualX = 1;
+                break;
+            case 'c','C':
+                movActualX = 2;
+                break;
+            case 'd','D':
+                movActualX = 3;
+                break;
+            case 'e','E':
+                movActualX = 4;
+                break;
+            case 'f','F':
+                movActualX = 5;
+                break;
+            case 'g','G':
+                movActualX = 6;
+                break;
+            case 'h','H':
+                movActualX = 7;
+
+                break;
+            default:
+
+                break;
+        }//FIN SWITCH
+        movActualY = 8 - Character.getNumericValue(moverA[1].charAt(1));
+        switch (moverA[2].charAt(0)) {
+            case 'a','A':
+                movPiezaX = 0;
+                break;
+            case 'b','B':
+                movPiezaX = 1;
+                break;
+            case 'c','C':
+                movPiezaX = 2;
+                break;
+            case 'd','D':
+                movPiezaX = 3;
+                break;
+            case 'e','E':
+                movPiezaX = 4;
+                break;
+            case 'f','F':
+                movPiezaX = 5;
+                break;
+            case 'g','G':
+                movPiezaX = 6;
+                break;
+            case 'h','H':
+                movPiezaX = 7;
+
+                break;
+            default:
+
+                break;
+        }
+        movPiezaY = 8 - Character.getNumericValue(moverA[2].charAt(1));
+        Pieza = moverA[0].charAt(0);
+        //Validar Movimientos
+        if (movimientoValido() == false) {
+            moverPieza();
+        }
+
+        //MoverPieza
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                //Si es un peon blanco
+                if (Pieza == 'P') {
+                    if (i == movActualY && j == movActualX) {
+                        tablero[movPiezaY][movPiezaX] = new Peon(j, i, true);
+                        tablero[movActualY][movActualX] = null;
+                        ImprimirTablero();
+                    }
+                }
             }
-
-            String[] moverA = mover.split("\\||-");
-
-            switch (moverA[1].charAt(0)) {
-                case 'a','A':
-                    movActualX = 0;
-                    break;
-                case 'b','B':
-                    movActualX = 1;
-                    break;
-                case 'c','C':
-                    movActualX = 2;
-                    break;
-                case 'd','D':
-                    movActualX = 3;
-                    break;
-                case 'e','E':
-                    movActualX = 4;
-                    break;
-                case 'f','F':
-                    movActualX = 5;
-                    break;
-                case 'g','G':
-                    movActualX = 6;
-                    break;
-                case 'h','H':
-                    movActualX = 7;
-
-                    break;
-                default:
-
-                    break;
-            }//FIN SWITCH
-            movActualY = 8 - Character.getNumericValue(moverA[1].charAt(1));
-            switch (moverA[2].charAt(0)) {
-                case 'a','A':
-                    movPiezaX = 0;
-                    break;
-                case 'b','B':
-                    movPiezaX = 1;
-                    break;
-                case 'c','C':
-                    movPiezaX = 2;
-                    break;
-                case 'd','D':
-                    movPiezaX = 3;
-                    break;
-                case 'e','E':
-                    movPiezaX = 4;
-                    break;
-                case 'f','F':
-                    movPiezaX = 5;
-                    break;
-                case 'g','G':
-                    movPiezaX = 6;
-                    break;
-                case 'h','H':
-                    movPiezaX = 7;
-
-                    break;
-                default:
-
-                    break;
-            }
-            movPiezaY = 8 - Character.getNumericValue(moverA[2].charAt(1));
-            System.out.println(movActualX);
-            System.out.println(movActualY);
-            System.out.println(movPiezaX);
-            System.out.println(movPiezaY);
-
         }
 
     }
@@ -212,5 +231,13 @@ public class Tablero {
             System.out.println("Movimiento fuera del tablero: ");
             return false;
         }
+
+        //Si no hay ninguna pieza
+        if (tablero[movActualX][movActualY] == null) {
+            System.out.println("No hay ninguna pieza");
+            return false;
+        }
+        
+        return true;
     }
 }//fin class
