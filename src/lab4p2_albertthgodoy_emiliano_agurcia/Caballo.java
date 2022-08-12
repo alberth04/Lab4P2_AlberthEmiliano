@@ -24,5 +24,14 @@ public class Caballo extends Pieza{
     public boolean validarMovimiento() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public char Figura(boolean colorPieza) {
+        if (colorPieza == true) {      
+            return 'N';
+        } else {
+            return 'n';
+        }
+    }
     
 }

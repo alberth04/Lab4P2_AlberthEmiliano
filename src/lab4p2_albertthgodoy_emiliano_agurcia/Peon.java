@@ -12,10 +12,6 @@ public class Peon extends Pieza{
     public Peon(boolean colorPieza) {
         super(colorPieza);
     }
-    
-    public char figuraPieza(){
-        
-    }
 
     @Override
     public boolean validarMovimiento() {
@@ -30,7 +26,5 @@ public class Peon extends Pieza{
             return 'p';
         }
     }
-
-    
     
 }
