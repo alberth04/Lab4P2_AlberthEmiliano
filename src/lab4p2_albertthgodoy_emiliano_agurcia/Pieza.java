@@ -47,5 +47,7 @@ public abstract class Pieza {
     }
 
     public abstract boolean validarMovimiento();
+    
+    public abstract char Figura(boolean colorPieza);
 
 }
