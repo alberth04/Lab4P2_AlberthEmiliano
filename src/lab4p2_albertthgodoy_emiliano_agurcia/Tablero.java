@@ -98,4 +98,46 @@ public class Tablero {
         Random rnd = new Random();
         turnoChess = rnd.nextBoolean();
     }
+    
+    public void ImprimirTablero(char[][] Matriz){
+            
+        String ABC = "abcdefghi";
+        String NUM = "0123456789";
+        int sub1 = 0;//Controla subindice de nodo1
+        int sub2 = 0;//Controla subindice de nodo2
+        
+        for (int i = 0; i < Matriz.length; i++) {
+            for (int j = 0; j < Matriz[i].length; j++) {
+                
+                char letras = ABC.charAt(sub1);
+                char nums = NUM.charAt(sub2);
+                
+                if (i == 0 && j != 0) {                     //Letras
+                    System.out.print("   " + letras);
+                    sub1++;
+                }else if (i != 0 && j == 0) {                     //Numeros
+                    System.out.print(" " + nums);
+                    sub2++;
+                }
+                
+                if (i == 0 && j == 0) {                            //Primer Espacio
+                    System.out.print(" ");
+                } 
+//                else if (i == 0 && j != 0) {                     //Letras
+//                    System.out.print("   " + letras);
+//                    sub1++;
+//                } 
+//                else if (i != 0 && j == 0) {                     //Numeros
+//                    System.out.print(" " + nums);
+//                    sub2++;
+//                }
+                
+                if(i != 0 && j != 0){                                            
+                    System.out.print("| " + Matriz[i][j] + " ");
+                } 
+            }    
+            System.out.println("");
+            System.out.println("  + - + - + - + - + - + - + - +");
+        }
+    }
 }
