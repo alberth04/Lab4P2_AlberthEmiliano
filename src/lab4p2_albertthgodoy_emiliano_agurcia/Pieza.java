@@ -1,14 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4p2_albertthgodoy_emiliano_agurcia;
 
 /**
  *
  * @author emili
  */
-public class Pieza {
-    
+public abstract class Pieza {
+
+    char cordX;
+    char cordY;
+
+    public Pieza() {
+    }
+
+    public Pieza(char cordX, char cordY) {
+        this.cordX = cordX;
+        this.cordY = cordY;
+    }
+
+    public char getCordX() {
+        return cordX;
+    }
+
+    public void setCordX(char cordX) {
+        this.cordX = cordX;
+    }
+
+    public char getCordY() {
+        return cordY;
+    }
+
+    public void setCordY(char cordY) {
+        this.cordY = cordY;
+    }
+
+    @Override
+    public String toString() {
+        return "Pieza{" + "cordX=" + cordX + ", cordY=" + cordY + '}';
+    }
+
+    public abstract boolean validarMovimiento();
+
 }
