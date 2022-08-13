@@ -35,7 +35,24 @@ public class Caballo extends Pieza {
 
     @Override
     public boolean validarMovimiento(int movActualX, int movActualY, int movPiezaX, int movPiezaY) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean mover = false;
+        if(movPiezaY > 7 || movPiezaX > 7){
+            mover = false;
+        }else if(movPiezaY == movActualY && movPiezaX == movActualX){
+            mover = false;
+        }else if((movPiezaY != movActualY-2 && movPiezaX != movActualX-1) ||    //2 Arriba 1 izquierda
+           (movPiezaY != movActualY-2 && movPiezaX != movActualX+1) ||          //2 Arriba 1 derecha
+           (movPiezaY != movActualY+2 && movPiezaX != movActualX-1) ||          //2 Abajo 1 izquierda
+           (movPiezaY != movActualY+2 && movPiezaX != movActualX+1) ||          //2 Abajo 1 derecha
+                
+           (movPiezaY != movActualY-1 && movPiezaX != movActualX-2) ||          //1 Izquierda 2 arriba
+           (movPiezaY != movActualY+1 && movPiezaX != movActualX-2) ||          //1 Izquierda 2 abajo
+           (movPiezaY != movActualY-1 && movPiezaX != movActualX+2) ||          //1 Derecha 2 arriba
+           (movPiezaY != movActualY+1 && movPiezaX != movActualX+2)){           //1 Derecha 2 abajo
+            mover = false;
+        }
+        
+        return mover;
     }
 
 }
