@@ -36,7 +36,17 @@ public class Alfil extends Pieza{
 
     @Override
     public boolean validarMovimiento(int movActualX, int movActualY, int movPiezaX, int movPiezaY) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean mover = false;
+        for (int i = 0; i < 8; i++) {
+            if(movPiezaY != movPiezaX ||                                        //Diagonal \
+              (movPiezaY != movActualY-i && movPiezaX != movActualX+i) ||       //Diagonal />
+              (movPiezaY != movActualY+i && movPiezaX != movActualX-i)){        //Diagonal </
+                mover = false;
+            }else{
+                mover = true;
+            }
+        }
+        return mover;
     }
     
 }
