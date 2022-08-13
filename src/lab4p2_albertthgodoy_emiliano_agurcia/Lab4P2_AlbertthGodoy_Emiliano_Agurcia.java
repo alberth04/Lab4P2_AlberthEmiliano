@@ -10,13 +10,14 @@ public class Lab4P2_AlbertthGodoy_Emiliano_Agurcia {
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String[] args) {
         Tablero t = new Tablero();
         t.iniciarTablero();
-        t.ImprimirTablero();
-        t.moverPieza();
-        
+        while (t.ganador() == true) {
+            t.ImprimirTablero();
+            t.moverPieza();
+        }
+
     }
-    
+
 }

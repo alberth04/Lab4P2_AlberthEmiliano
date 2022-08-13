@@ -209,19 +209,16 @@ public class Tablero {
         }
 
         //MoverPieza
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[i].length; j++) {
-                //Si es un peon blanco
-                if (Pieza == 'P') {
-                    if (i == movActualY && j == movActualX) {
-                        tablero[movPiezaY][movPiezaX] = new Peon(j, i, true);
-                        tablero[movActualY][movActualX] = null;
-                        ImprimirTablero();
-                    }
-                }
-            }
+        if (movimientoValido()== true) {
+            tablero[movPiezaY][movPiezaX] = tablero[movActualY][movActualX];
+            tablero[movActualY][movActualX] = null;
         }
-
+        //CambioTurno
+        if (turnoChess == true) {
+            turnoChess =false;
+        } else if(turnoChess == false){
+            turnoChess =true;
+        }
     }
 
     public boolean movimientoValido() {
@@ -237,6 +234,10 @@ public class Tablero {
             System.out.println("No hay ninguna pieza");
             return false;
         }
+        
+        return true;
+    }
+    public boolean ganador(){
         
         return true;
     }
